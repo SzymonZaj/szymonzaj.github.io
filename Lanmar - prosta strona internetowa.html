@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanmar - Obsługa IT, Kamery, Alarmy, Sieci LAN</title>
+    <!-- Link do Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link do Font Awesome CDN (dodany dla ikon w sekcji O nas) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Konfiguracja Tailwind CSS dla niestandardowych stylów, np. czcionki Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6', // Blue color
+                        secondary: '#1F2937', // Dark gray
+                        accent: '#F59E0B', // Orange accent
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Czcionka Inter z Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles, if needed, but we try to use Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling to sections */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-primary rounded-lg p-2 hover:text-blue-700 transition duration-300">Lanmar</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#uslugi" class="text-lg font-semibold text-gray-700 hover:text-primary transition duration-300">Usługi</a></li>
+                    <li><a href="#o-nas" class="text-lg font-semibold text-gray-700 hover:text-primary transition duration-300">O nas</a></li>
+                    <li><a href="#kontakt" class="text-lg font-semibold text-gray-700 hover:text-primary transition duration-300">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-primary to-blue-600 text-white py-20 md:py-28 flex items-center justify-center min-h-[70vh] overflow-hidden">
+        <!-- Background IT-related elements (SVGs) -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Gear icon -->
+            <svg class="absolute top-1/4 left-1/4 w-24 h-24 md:w-48 md:h-48 text-white opacity-10 transform -translate-x-1/2 -translate-y-1/2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2c-2.76 0-5 2.24-5 5v3c0 2.76 2.24 5 5 5s5-2.24 5-5V7c0-2.76-2.24-5-5-5zm0 13c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3s3 1.34 3 3v3c0 1.66-1.34 3-3 3zm-1 9h2v-2h-2v2zm-4-4h2v-2H7v2zm8 0h2v-2h-2v2z"/>
+            </svg>
+            <!-- Circuit board/chip icon -->
+            <svg class="absolute bottom-1/4 right-1/4 w-24 h-24 md:w-48 md:h-48 text-white opacity-10 transform translate-x-1/2 translate-y-1/2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V5h14l.01 14H5zm2-6h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM7 9h2V7H7v2zm4 0h2V7h-2v2zm4 0h2V7h-2v2z"/>
+            </svg>
+            <!-- Network icon -->
+            <svg class="absolute top-1/2 right-1/4 w-20 h-20 md:w-40 md:h-40 text-white opacity-10 transform -translate-y-1/2 translate-x-1/2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 5c-1.1 0-2 .9-2 2v2h-4V7c0-1.1-.9-2-2-2s-2 .9-2 2v2H4V7c0-1.1-.9-2-2-2S0 5.9 0 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-2 12H4V9h14v8zm-2-7h-4V7h4v3z"/>
+            </svg>
+            <!-- Code brackets icon -->
+            <svg class="absolute bottom-1/3 left-1/3 w-20 h-20 md:w-40 md:h-40 text-white opacity-10 transform translate-x-1/2 translate-y-1/2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.6 16.6l4.6-4.6-4.6-4.6L16 4l6 6-6 6-1.4-1.4zm-5.2 0L2 12l4.6-4.6L8 9.4l-4.6 4.6 4.6 4.6 1.4-1.4z"/>
+            </svg>
+        </div>
+
+        <div class="container mx-auto text-center px-4 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                Lanmar: Twój Partner w IT i Bezpieczeństwie
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto animate-fade-in-up">
+                Kompleksowa obsługa informatyczna, sieci komputerowe, systemy alarmowe oraz monitoring dla Twojej firmy.
+            </p>
+            <a href="#uslugi" class="bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out animate-fade-in-up-delay">
+                Poznaj Nasze Usługi
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="uslugi" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-secondary mb-12">Nasze Usługi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service Card: IT Support for Companies -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <!-- Computer Icon -->
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Obsługa Informatyczna Firm</h3>
+                    <p class="text-gray-600 text-center">
+                        Kompleksowe wsparcie IT, administracja serwerami, zarządzanie siecią i bieżące rozwiązywanie problemów dla Twojej firmy.
+                    </p>
+                </div>
+
+                <!-- Service Card: IT Service -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <!-- Wrench/Key Icon (New) -->
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-2.06-2.06c-.4-.4-.5-1-.2-1.5l1.04-1.04c.4-.4.5-1.1.2-1.6l-2.06-2.06c-.4-.4-1-.5-1.5-.2l-1.04 1.04c-.4.4-1.1.5-1.6.2l-2.06-2.06c-.4-.4-.5-1-.2-1.5l1.04-1.04c.4-.4.5-1.1.2-1.6l-2.06-2.06c-.4-.4-1-.5-1.5-.2l-1.04 1.04c-.4.4-1.1.5-1.6.2l-2.06-2.06c-.4-.4-.5-1-.2-1.5l1.04-1.04c.4-.4.5-1.1.2-1.6L5.3 2.3c-.4-.4-1-.5-1.5-.2L2.7 3.3c-.4.4-.5 1-.2 1.5l2.06 2.06c.4.4.5 1.1.2 1.6L3.9 9.5c-.4-.4-1.1-.5-1.6-.2l-2.06 2.06c-.4-.4-.5-1-.2-1.5l1.04-1.04c.4-.4.5-1.1.2-1.6L.7 13.7c-.4-.4-1-.5-1.5-.2L-2.7 14.7c-.4.4-.5 1-.2 1.5l2.06 2.06c.4.4.5 1.1.2 1.6l1.04-1.04c.4-.4 1.1-.5 1.6-.2l2.06 2.06c.4.4.5 1-.2 1.5l-1.04 1.04c-.4.4-.5 1.1-.2 1.6l2.06 2.06c.4.4 1 .5 1.5.2l1.04-1.04c.4-.4 1.1-.5 1.6-.2l2.06 2.06c.4.4.5 1-.2 1.5l-1.04 1.04c-.4.4-.5 1.1-.2 1.6zM12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Serwis IT</h3>
+                    <p class="text-gray-600 text-center">
+                        Profesjonalne naprawy, modernizacje i konserwacja sprzętu komputerowego oraz oprogramowania.
+                    </p>
+                </div>
+
+                <!-- Service Card: Camera and Alarm System Installation -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <!-- Camera Icon -->
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Montaż Kamer i Systemów Alarmowych</h3>
+                    <p class="text-gray-600 text-center">
+                        Projektowanie i instalacja niezawodnych systemów monitoringu wizyjnego oraz alarmowych dla bezpieczeństwa Twojej firmy.
+                    </p>
+                </div>
+
+                <!-- Service Card: LAN Networks -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <!-- Network Icon -->
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 5c-1.1 0-2 .9-2 2v2h-4V7c0-1.1-.9-2-2-2s-2 .9-2 2v2H4V7c0-1.1-.9-2-2-2S0 5.9 0 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-2 12H4V9h14v8zm-2-7h-4V7h4v3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Sieci LAN i Wi-Fi</h3>
+                    <p class="text-gray-600 text-center">
+                        Projektowanie, budowa i konfiguracja wydajnych oraz bezpiecznych sieci lokalnych i bezprzewodowych.
+                    </p>
+                </div>
+
+                <!-- Service Card: Call to action for cooperation -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border-t-4 border-primary flex flex-col justify-center items-center">
+                    <div class="text-primary mb-4">
+                        <!-- Handshake Icon -->
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Zapraszamy do Współpracy!</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Skontaktuj się z nami, aby omówić szczegóły i uzyskać spersonalizowaną ofertę.
+                    </p>
+                    <a href="#kontakt" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-lg shadow-md transition duration-300">
+                        Skontaktuj się
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Adapted from provided file) -->
+    <section id="o-nas" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-4xl font-bold text-secondary mb-6">O naszej firmie</h2>
+                    <p class="text-gray-600 mb-6">Lanmar to zespół doświadczonych specjalistów IT, którzy od lat dostarczają kompleksowe rozwiązania informatyczne dla firm z różnych branż.</p>
+                    <p class="text-gray-600 mb-6">Naszą misją jest zapewnienie klientom najwyższej jakości usług, które pomogą im osiągnąć sukces w cyfrowym świecie. Stawiamy na innowacyjność, bezpieczeństwo i niezawodność.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-building text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">500+</h4>
+                                <p class="text-gray-600 text-sm">Zadowolonych klientów</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-project-diagram text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">1000+</h4>
+                                <p class="text-gray-600 text-sm">Zrealizowanych projektów</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#kontakt" class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">Skontaktuj się z nami</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-server text-primary text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-48 bg-blue-200 flex items-center justify-center">
+                                <i class="fas fa-network-wired text-primary text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-48 bg-blue-200 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-primary text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-video text-primary text-5xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-secondary mb-12">Kontakt</h2>
+            <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 border-t-4 border-accent">
+                <p class="text-xl font-semibold text-gray-700 mb-4">Lanmar Łukasz Cichocki</p>
+                <p class="text-lg text-gray-600 mb-2">ul. Piłsudskiego 8A</p>
+                <p class="text-lg text-gray-600 mb-6">63-000 Środa Wlkp.</p>
+
+                <div class="flex flex-col items-center space-y-4 mb-8">
+                    <a href="tel:608863126" class="flex items-center text-primary hover:text-blue-700 transition duration-300 text-xl font-medium">
+                        <!-- Phone Icon -->
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.2 2.2z"/>
+                        </svg>
+                        608 863 126
+                    </a>
+                    <a href="mailto:biuro@lanmar.eu" class="flex items-center text-primary hover:text-blue-700 transition duration-300 text-xl font-medium">
+                        <!-- Email Icon -->
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        biuro@lanmar.eu
+                    </a>
+                </div>
+
+                <!-- Google Map -->
+                <h3 class="text-2xl font-semibold text-secondary mt-12 mb-6">Znajdź nas na mapie</h3>
+                <div class="w-full rounded-xl overflow-hidden shadow-lg border-t-4 border-accent">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.974917500412!2d17.28827727694692!3d52.22638887196027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4704712574e4141d%3A0x6b1c5a9b7e7a5b1e!2sPi%C5%82sudskiego%208A%2C%2063-000%20%C5%9Aroda%20Wlkp.!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="rounded-xl">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-secondary text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Lanmar Łukasz Cichocki. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
