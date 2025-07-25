@@ -62,7 +62,8 @@
                 <img src="logo.png" alt="Lanmar Logo" class="h-10 mx-auto">
             </a>
             <nav class="w-full">
-                <ul class="flex flex-col items-center space-y-2">
+                <!-- Changed flex-col to flex-row for horizontal links -->
+                <ul class="flex flex-row justify-center space-x-4">
                     <li><a href="#uslugi" class="text-base font-semibold text-gray-700 hover:text-primary transition duration-300">Usługi</a></li>
                     <li><a href="#o-nas" class="text-base font-semibold text-gray-700 hover:text-primary transition duration-300">O nas</a></li>
                     <li><a href="#kontakt" class="text-base font-semibold text-gray-700 hover:text-primary transition duration-300">Kontakt</a></li>
@@ -72,10 +73,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-primary to-blue-600 text-white py-20 md:py-28 flex items-center justify-center min-h-[70vh] overflow-hidden">
+    <section class="relative bg-gradient-to-r from-primary to-blue-600 text-white py-20 md:py-28 flex flex-col items-center justify-center min-h-[70vh] overflow-hidden">
         <div class="container mx-auto text-center px-4 relative z-10">
+            <!-- Logo Image in Hero Section -->
+            <img src="logo.png" alt="Lanmar Logo" class="h-20 md:h-24 mx-auto mb-6 animate-fade-in-down">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
-                Lanmar: Twój Partner w IT i Bezpieczeństwie
+                Twój Partner w IT i Bezpieczeństwie
             </h1>
             <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto animate-fade-in-up">
                 Kompleksowa obsługa informatyczna, sieci komputerowe, systemy alarmowe oraz monitoring dla Twojej firmy.
